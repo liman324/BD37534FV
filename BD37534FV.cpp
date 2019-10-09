@@ -78,38 +78,43 @@ void BD37534FV::setIn_gain(int in_gain, int mute){
    }
 
 void BD37534FV::setVol(int vol){
+            if(vol > 0){vol = 128 - vol;}
             if(vol <= 0){vol = abs(vol) + 128;}
-            else(vol > 0){vol = 128 - vol;}
             writeWire(VOLUME_GAIN, vol); 
    }
 
 void BD37534FV::setFront_1(int front_1){
+            if(front_1 > 0){front_1 = 128 - front_1;}
             if(front_1 <= 0){front_1 = abs(front_1) + 128;}
-            else(front_1 > 0){front_1 = 128 - front_1;}
+            
             writeWire(FADER_1_FRONT, front_1); 
    }
 
 void BD37534FV::setFront_2(int front_2){
+            if(front_2 > 0){front_2 = 128 - front_2;}
             if(front_2 <= 0){front_2 = abs(front_2) + 128;}
-            else(front_2 > 0){front_2 = 128 - front_2;}
+            
             writeWire(FADER_2_FRONT, front_2); 
    }
 
 void BD37534FV::setRear_1(int rear_1){
+            if(rear_1 > 0){rear_1 = 128 - rear_1;}
             if(rear_1 <= 0){rear_1 = abs(rear_1) + 128;}
-            else(rear_1 > 0){rear_1 = 128 - rear_1;}
+            
             writeWire(FADER_1_REAR, rear_1); 
    }
 
 void BD37534FV::setRear_2(int rear_2){
+            if(rear_2 > 0){rear_2 = 128 - rear_2;}
             if(rear_2 <= 0){rear_2 = abs(rear_2) + 128;}
-            else(rear_2 > 0){rear_2 = 128 - rear_2;}
+           
             writeWire(FADER_2_REAR, rear_2); 
    }
 
 void BD37534FV::setSub(int sub){
+            if(sub > 0){sub = 128 - sub;}
             if(sub <= 0){sub = abs(sub) + 128;}
-            else(sub > 0){sub = 128 - sub;}
+            
             writeWire(FADER_SUB, sub); 
    }
 
